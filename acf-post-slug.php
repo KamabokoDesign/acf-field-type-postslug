@@ -15,9 +15,9 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_plugin_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_acf_plugin_post_slug') ) :
 
-class NAMESPACE_acf_plugin_FIELD_NAME {
+class NAMESPACE_acf_plugin_post_slug {
 	
 	// vars
 	var $settings;
@@ -56,7 +56,7 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 
 
 // initialize
-new NAMESPACE_acf_plugin_FIELD_NAME();
+new NAMESPACE_acf_plugin_post_slug();
 
 
 // class_exists check

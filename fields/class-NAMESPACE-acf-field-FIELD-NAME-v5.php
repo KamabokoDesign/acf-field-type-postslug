@@ -5,14 +5,14 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_field_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_acf_field_post_slug') ) :
 
 
-class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
+class NAMESPACE_acf_field_post_slug extends acf_field {
 	
 	
 	function __construct( $settings ) {
-		$this->name = 'FIELD_NAME';
+		$this->name = 'post_slug';
 		$this->label = __('Post Slug', 'TEXTDOMAIN');
 		$this->category = 'basic';
 		$this->defaults = array(
@@ -101,7 +101,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new NAMESPACE_acf_field_FIELD_NAME( $this->settings );
+new NAMESPACE_acf_field_post_slug( $this->settings );
 
 
 // class_exists check

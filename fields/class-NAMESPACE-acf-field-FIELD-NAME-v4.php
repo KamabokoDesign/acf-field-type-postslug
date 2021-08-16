@@ -5,10 +5,10 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_field_FIELD_NAME') ) :
+if( !class_exists('NAMESPACE_acf_field_post_slug') ) :
 
 
-class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
+class NAMESPACE_acf_field_post_slug extends acf_field {
 	
 	// vars
 	var $settings, // will hold info such as dir / path
@@ -27,7 +27,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 	function __construct( $settings )
 	{
 		// vars
-		$this->name = 'FIELD_NAME';
+		$this->name = 'post_slug';
 		$this->label = __('Post Slug');
 		$this->category = __("Basic",'TEXTDOMAIN'); // Basic, Content, Choice, etc
 		$this->defaults = array(
@@ -373,7 +373,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new NAMESPACE_acf_field_FIELD_NAME( $this->settings );
+new NAMESPACE_acf_field_post_slug( $this->settings );
 
 
 // class_exists check
