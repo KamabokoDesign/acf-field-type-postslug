@@ -63,6 +63,7 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 			}
 		}
 
+		//populates frontend select
 		if ($postTypes) {
 			foreach ($postTypes as $index=>$post) {
 
