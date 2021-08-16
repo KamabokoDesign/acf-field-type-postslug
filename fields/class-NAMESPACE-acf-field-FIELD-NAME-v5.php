@@ -85,16 +85,17 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 	function load_value($value, $post_id, $field) {
 		return $value;
 	}
-	
-	function update_value($value, $post_id, $field) {
-		return $value;
-	}
 
 	function format_value($value, $post_id, $field) {
-		if(empty($value)) {
+		//bail if no value
+		if( empty($value) ) {
 			return $value;
 		}
 
+		return $value;
+	}
+	
+	function update_value($value, $post_id, $field) {
 		return $value;
 	}
 	
