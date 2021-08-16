@@ -95,7 +95,9 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 		return $value;
 	}
 	
+	//this happens everytime a user hits "update"
 	function update_value($value, $post_id, $field) {
+		//$value = "this overrides";
 		return $value;
 	}
 	
