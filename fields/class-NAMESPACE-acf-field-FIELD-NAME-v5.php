@@ -45,12 +45,24 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 
 		$field['type'] = 'select';
 		$field['choices'] = array();
+		$field['slugs'] = array();
 		$postTypes = $field['post_type'];
-		
-		echo '<pre>';
-			print_r( $field );
-		echo '</pre>';
-		
+
+		//populate slugs
+		if (empty($field['slugs'])) {
+			foreach($postTypes as $post) {
+				$postChildren = get_posts([
+					'post_type' => $post,
+					'post_status' => 'publish',
+					'numberposts' => -1
+				]);
+	
+				foreach ($postChildren as $childrenIndex=>$child) {
+					$field['slugs'][$childrenIndex] = $child->post_name;
+				}
+			}
+		}
+
 		if ($postTypes) {
 			foreach ($postTypes as $index=>$post) {
 
@@ -61,7 +73,6 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 				]);
 
 				foreach ($postChildren as $childrenIndex=>$child) {
-					//$field['choices'][$child->ID] = $child->post_name;
 					$field['choices'][$childrenIndex] = $child->post_title;
 				}
 
@@ -69,7 +80,22 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 			acf_render_field($field);
 		}
 	}
+
+	function load_value($value, $post_id, $field) {
+		return $value;
+	}
 	
+	function update_value($value, $post_id, $field) {
+		return $value;
+	}
+
+	function format_value($value, $post_id, $field) {
+		if(empty($value)) {
+			return $value;
+		}
+
+		return $value;
+	}
 	
 }
 
