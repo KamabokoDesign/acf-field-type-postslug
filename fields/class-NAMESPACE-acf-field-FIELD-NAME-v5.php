@@ -13,7 +13,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 	
 	function __construct( $settings ) {
 		$this->name = 'FIELD_NAME';
-		$this->label = __('FIELD_LABEL', 'TEXTDOMAIN');
+		$this->label = __('Post Slug', 'TEXTDOMAIN');
 		$this->category = 'basic';
 		$this->defaults = array(
 			'post_type'	=> array(),

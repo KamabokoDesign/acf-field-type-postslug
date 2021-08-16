@@ -28,7 +28,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 	{
 		// vars
 		$this->name = 'FIELD_NAME';
-		$this->label = __('FIELD_LABEL');
+		$this->label = __('Post Slug');
 		$this->category = __("Basic",'TEXTDOMAIN'); // Basic, Content, Choice, etc
 		$this->defaults = array(
 			// add default here to merge into your field. 
