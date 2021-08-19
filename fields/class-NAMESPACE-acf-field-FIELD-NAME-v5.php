@@ -35,7 +35,7 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 			'choices'				=> acf_get_pretty_post_types(),
 			'multiple'			=> 1,
 			'ui'						=> 1,
-			'allow_null'		=> 1,
+			'allow_null'		=> 0,
 			'placeholder'		=> __("All post types", 'acf'),
 		));
 
@@ -47,22 +47,8 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 		$field['choices'] = array();
 		$field['slugs'] = array();
 		$field['ui'] = true;
+		$field['allow_null'] = true;
 		$postTypes = $field['post_type'];
-
-		//populate slugs
-		if (empty($field['slugs'])) {
-			foreach($postTypes as $post) {
-				$postChildren = get_posts([
-					'post_type' => $post,
-					'post_status' => 'publish',
-					'numberposts' => -1
-				]);
-	
-				foreach ($postChildren as $childrenIndex=>$child) {
-					$field['slugs'][$childrenIndex] = $child->post_name;
-				}
-			}
-		}
 
 		//populates frontend select
 		if ($postTypes) {
@@ -77,11 +63,17 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 				foreach ($postChildren as $childrenIndex=>$child) {
 					$field['choices'][$childrenIndex] = $child->post_title;
 				}
-
 			}
-			acf_render_field_wrap($field);
 		}
+
+		echo "<div class='acf-field acf-field-select' 
+           data-name='{$field['label']}' 
+           data-type='select' 
+           data-key='{$field['key']}'>";
+			acf_render_field($field);
+		echo "</div>";
 	}
+	
 
 	function load_value($value, $post_id, $field) {
 		return $value;
