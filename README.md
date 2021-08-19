@@ -16,3 +16,4 @@ Will change your return format to be an int vs string
 
 # Resources
 [Adding an 'x' to select dropdown](https://support.advancedcustomfields.com/forums/topic/use-select2-instead-of-browser-dropdown/)
+[The best acf function reference](https://docs.wpdebuglog.com/plugin/advanced-custom-fields/)
