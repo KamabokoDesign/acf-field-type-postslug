@@ -10,8 +10,9 @@ Unfortunately at the moment this only takes the published Post / Page's index. T
 ## function format_value($value, $post_id, $field)
 
 `$value = intval($value);`
+
 Will change your return format to be an int vs string
 
 
 # Resources
-[How to clear values on Admin <select>](https://support.advancedcustomfields.com/forums/topic/use-select2-instead-of-browser-dropdown/)
+[Adding an 'x' to select dropdown](https://support.advancedcustomfields.com/forums/topic/use-select2-instead-of-browser-dropdown/)
