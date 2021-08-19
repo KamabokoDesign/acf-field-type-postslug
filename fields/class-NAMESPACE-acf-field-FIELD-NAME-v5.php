@@ -46,6 +46,7 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 		$field['type'] = 'select';
 		$field['choices'] = array();
 		$field['slugs'] = array();
+		$field['ui'] = true;
 		$postTypes = $field['post_type'];
 
 		//populate slugs
@@ -78,7 +79,7 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 				}
 
 			}
-			acf_render_field($field);
+			acf_render_field_wrap($field);
 		}
 	}
 
