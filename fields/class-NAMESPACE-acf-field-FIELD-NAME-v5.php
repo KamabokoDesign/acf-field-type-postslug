@@ -84,13 +84,16 @@ class NAMESPACE_acf_field_post_slug extends acf_field {
 		if( empty($value) ) {
 			return $value;
 		}
-
 		return $value;
 	}
 	
 	//this happens everytime a user hits "update"
 	function update_value($value, $post_id, $field) {
-		//$value = "this overrides";
+		$value = (object) [
+			'ID' => $value,
+			'content' => $field,
+			'favorite_food' => "Chicken Wing"
+		];
 		return $value;
 	}
 	
